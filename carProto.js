@@ -9,12 +9,18 @@ $( document ).ready(function() {
 
     class Car {
         constructor(model) {
+            this.speed = 0;
             this.model = model;
-            this.accelerate = "twice"
-            this.brake = "once"
         }
+        
         accelerate() {
-            console.log("instance.toString()")
+            this.speed++;
+        }
+        brake(){
+            this.speed--;
+        }
+        toString(){
+            return (`model:${this.model}, speed:${this.speed}`);
         }
     }
 
@@ -30,15 +36,22 @@ $( document ).ready(function() {
     //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
     class ElectricCar {
         constructor(model) {
+            this.speed = 0;
             this.model = model;
-            this.accelerate = "twice"
-            this.brake = "once"
         }
+        
         accelerate() {
-            // instance.toString()
+            this.speed++;
+        }
+        brake(){
+            this.speed--;
+        }
+        toString(){
+            return (`model:${this.model}, speed:${this.speed}`);
         }
     }
 
     let electricCar = new ElectricCar("S-28")
+
     console.log(electricCar.toString())
 })
